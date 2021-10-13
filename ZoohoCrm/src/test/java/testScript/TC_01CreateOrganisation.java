@@ -36,18 +36,18 @@ public class TC_01CreateOrganisation {
 		 String oname = eutil.getExcelData("Sheet1", 1, 1);
 		driver.findElement(By.name("accountname")).sendKeys(oname+JavaUtility.getRandomData()); //we can use same name then it will take random numbers
 		WebElement dropdown = driver.findElement(By.name("assigned_user_id"));
-		//Select s=new Select(dropdown);
-		//s.selectByIndex(0);
+		Select s=new Select(dropdown);
+		s.selectByIndex(0);
 		wutil.SelectOption(dropdown, 0);
 		driver.findElement(By.name("button")).click();
-		//Actions act=new Actions(driver);
+		Actions act=new Actions(driver);
 		//act.moveToElement(ele).perform();
 		Thread.sleep(3000);
 		WebElement ele = driver.findElement(By.xpath("//img[@src=\"themes/softed/images/user.PNG\"]"));
 		wutil.mouseOver(driver, ele);
 		driver.findElement(By.xpath("//a[text()='Sign Out']")).click();
 		Thread.sleep(3000);
-		//driver.close();
+		driver.close();
 		
 	}
 };
