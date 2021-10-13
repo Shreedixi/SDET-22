@@ -47,7 +47,7 @@ public class TC_01CreateOrganisation {
 		wutil.mouseOver(driver, ele);
 		driver.findElement(By.xpath("//a[text()='Sign Out']")).click();
 		Thread.sleep(3000);
-		driver.close();
+		
 		
 	}
 };
